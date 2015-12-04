@@ -12,7 +12,7 @@ angular.module('quizapp').controller('QuizAppController', ['$scope', '$location'
   return {
     restrict: 'AE',
     scope: {},
-    templateUrl: 'template.html',
+    templateUrl: 'modules/quizapp/client/views/template.html',
     link: function(scope, elem, attrs) {
       scope.start = function() {
         scope.id = 0;
