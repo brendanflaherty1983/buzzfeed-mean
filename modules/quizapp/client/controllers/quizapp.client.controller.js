@@ -18,7 +18,6 @@ angular.module('quizapp').controller('QuizAppController', ['$scope', '$location'
         scope.id = 0;
         scope.quizOver = false;
         scope.inProgress = true;
-		scope.selectedOption = '';
         scope.getQuestion();
       };
 
@@ -40,16 +39,15 @@ angular.module('quizapp').controller('QuizAppController', ['$scope', '$location'
       };
 
       scope.checkAnswer = function() {
-        if(!scope.selectedOption.length) return;
-
-        if(scope.selectedOption === scope.options[scope.answer]) {
+        if(question.selected === -1) return;
+		
+        if(question.selected === scope.options[scope.answer]) {
           scope.score++;
           scope.correctAns = true;
         } else {
           scope.correctAns = false;
         }
 
-		scope.selectedOption = '';
         scope.answerMode = false;
       };
 
@@ -66,27 +64,32 @@ angular.module('quizapp').controller('QuizAppController', ['$scope', '$location'
     {
       question: 'Which is the largest country in the world by population?',
       options: ['India', 'USA', 'China', 'Russia'],
-      answer: 2
+      answer: 2,
+	  selected: -1
     },
     {
       question: 'When did the second world war end?',
       options: ['1945', '1939', '1944', '1942'],
-      answer: 0
+      answer: 0,
+	  selected: -1
     },
     {
       question: 'Which was the first country to issue paper currency?',
       options: ['USA', 'France', 'Italy', 'China'],
-      answer: 3
+      answer: 3,
+	  selected: -1
     },
     {
       question: 'Which city hosted the 1996 Summer Olympics?',
       options: ['Atlanta', 'Sydney', 'Athens', 'Beijing'],
-      answer: 0
+      answer: 0,
+	  selected: -1
     },
     {	
       question: 'Who invented telephone?',
       options: ['Albert Einstein', 'Alexander Graham Bell', 'Isaac Newton', 'Marie Curie'],
-      answer: 1
+      answer: 1,
+	  selected: -1
     }
   ];
 
