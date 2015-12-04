@@ -8,7 +8,7 @@ angular.module('quizapp').config(['$stateProvider',
         url: '/quiz',
         templateUrl: 'modules/quizapp/client/views/quizapp.client.view.html',
         data: {
-          roles: ['user', 'admin']
+          roles: ['*']
         }
       });
   }
