@@ -20,7 +20,7 @@ angular.module('quizapp').config(['$stateProvider',
     $stateProvider
       .state('quiz', {
         url: '/quiz',
-        templateUrl: 'public/modules/quizapp/template.html',
+        templateUrl: 'public/modules/quizapp/index.html',
         data: {
           roles: ['user', 'admin']
         }
