@@ -36,29 +36,29 @@ module.exports = {
     }
   },
   facebook: {
-    clientID: process.env.FACEBOOK_ID || 'APP_ID',
-    clientSecret: process.env.FACEBOOK_SECRET || 'APP_SECRET',
+    clientID: process.env.FACEBOOK_ID || '875640272531364',
+    clientSecret: process.env.FACEBOOK_SECRET || '219924d4ca787eed0b4a432259139965',
     callbackURL: '/api/auth/facebook/callback'
   },
   twitter: {
-    clientID: process.env.TWITTER_KEY || 'CONSUMER_KEY',
-    clientSecret: process.env.TWITTER_SECRET || 'CONSUMER_SECRET',
+    clientID: process.env.TWITTER_KEY || '2TMxe8A7O5SqPIR4xYcx0eIRn',
+    clientSecret: process.env.TWITTER_SECRET || 'oaYBigTR7LQLSkdL1EmIh5VBoZ3X9gIMO0c8tzJuHfP7Iv2viW',
     callbackURL: '/api/auth/twitter/callback'
   },
+  github: {
+    clientID: process.env.GITHUB_ID || '1c377d73b2c3c05b5a67',
+    clientSecret: process.env.GITHUB_SECRET || 'df198221d65ee862062b2d78a27406ec3808eb78',
+    callbackURL: '/api/auth/github/callback'
+  },
   google: {
-    clientID: process.env.GOOGLE_ID || 'APP_ID',
-    clientSecret: process.env.GOOGLE_SECRET || 'APP_SECRET',
+    clientID: process.env.GOOGLE_ID || '4517850361-hf3mr49aiuvr4kmq6b42lo9rdb47obrs.apps.googleusercontent.com',
+    clientSecret: process.env.GOOGLE_SECRET || 'ER649vJXT14nxEWc8J-rD4A9',
     callbackURL: '/api/auth/google/callback'
   },
   linkedin: {
-    clientID: process.env.LINKEDIN_ID || 'APP_ID',
-    clientSecret: process.env.LINKEDIN_SECRET || 'APP_SECRET',
+    clientID: process.env.LINKEDIN_ID || '78lg0hm031wo0t',
+    clientSecret: process.env.LINKEDIN_SECRET || 'M8wJPrmeh2rLQTlv',
     callbackURL: '/api/auth/linkedin/callback'
-  },
-  github: {
-    clientID: process.env.GITHUB_ID || 'APP_ID',
-    clientSecret: process.env.GITHUB_SECRET || 'APP_SECRET',
-    callbackURL: '/api/auth/github/callback'
   },
   paypal: {
     clientID: process.env.PAYPAL_ID || 'CLIENT_ID',
