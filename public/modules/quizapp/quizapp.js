@@ -22,7 +22,7 @@ angular.module('quizapp').config(['$stateProvider',
         url: '/quiz',
         templateUrl: 'public/modules/quizapp/index.html',
         data: {
-          roles: ['*']
+          roles: ['user', 'admin']
         }
       });
   }
