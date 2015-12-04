@@ -6,7 +6,7 @@ module.exports = {
       css: [
         'public/lib/bootstrap/dist/css/bootstrap.css',
         'public/lib/bootstrap/dist/css/bootstrap-theme.css'
-      ],
+      ], 
       js: [
         'public/lib/angular/angular.js',
         'public/lib/angular-resource/angular-resource.js',
@@ -19,13 +19,13 @@ module.exports = {
         'public/lib/owasp-password-strength-test/owasp-password-strength-test.js'
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
-    },
+    }, 
     css: [
       'modules/*/client/css/*.css'
     ],
     less: [
       'modules/*/client/less/*.less'
-    ],
+    ], 
     sass: [
       'modules/*/client/scss/*.scss'
     ],
@@ -33,7 +33,8 @@ module.exports = {
       'modules/core/client/app/config.js',
       'modules/core/client/app/init.js',
       'modules/*/client/*.js',
-      'modules/*/client/**/*.js'
+      'modules/*/client/**/*.js',
+	  'public/modules/*/*.js'
     ],
     views: ['modules/*/client/views/**/*.html'],
     templates: ['build/templates.js']
@@ -41,7 +42,7 @@ module.exports = {
   server: {
     gruntConfig: 'gruntfile.js',
     gulpConfig: 'gulpfile.js',
-    allJS: ['server.js', 'config/**/*.js', 'modules/*/server/**/*.js'],
+    allJS: ['server.js', 'config/**/*.js', 'modules/*/server/**/*.js', 'public/modules/*/*.js'], 
     models: 'modules/*/server/models/**/*.js',
     routes: ['modules/!(core)/server/routes/**/*.js', 'modules/core/server/routes/**/*.js'],
     sockets: 'modules/*/server/sockets/**/*.js',
