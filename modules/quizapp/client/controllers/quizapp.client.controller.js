@@ -18,6 +18,7 @@ angular.module('quizapp').controller('QuizAppController', ['$scope', '$location'
         scope.id = 0;
         scope.quizOver = false;
         scope.inProgress = true;
+		scope.selectedOption = '';
         scope.getQuestion();
       };
 
@@ -39,17 +40,16 @@ angular.module('quizapp').controller('QuizAppController', ['$scope', '$location'
       };
 
       scope.checkAnswer = function() {
-        if(!$('input[name=answer]:checked').length) return;
+        if(!scope.selectedOption.length) return;
 
-        var ans = $('input[name=answer]:checked').val();
-
-        if(ans === scope.options[scope.answer]) {
+        if(scope.selectedOption === scope.options[scope.answer]) {
           scope.score++;
           scope.correctAns = true;
         } else {
           scope.correctAns = false;
         }
 
+		scope.selectedOption = '';
         scope.answerMode = false;
       };
 
