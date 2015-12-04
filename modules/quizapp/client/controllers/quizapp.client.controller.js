@@ -39,9 +39,9 @@ angular.module('quizapp').controller('QuizAppController', ['$scope', '$location'
       };
 
       scope.checkAnswer = function() {
-        //if(!$('input[name=answer]:checked').length) return;
+        if(!$('input[name=answer]:checked').length) return;
 
-        var ans = '';//$('input[name=answer]:checked').val();
+        var ans = $('input[name=answer]:checked').val();
 
         if(ans === scope.options[scope.answer]) {
           scope.score++;
