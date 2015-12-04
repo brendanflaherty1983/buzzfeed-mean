@@ -8,17 +8,6 @@ angular.module('quizapp').controller('QuizAppController', ['$scope', '$location'
       $location.path('/');
     }
   }
-]).config(['$stateProvider',
-  function ($stateProvider) {
-    $stateProvider
-      .state('quiz', {
-        url: '/quiz',
-        templateUrl: 'modules/quizapp/client/views/quizapp.client.view.html',
-        data: {
-          roles: ['user', 'admin']
-        }
-      });
-  }
 ]).directive('quiz', function(quizFactory) {
 	return {
 		restrict: 'AE',
