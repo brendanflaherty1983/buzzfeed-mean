@@ -61,8 +61,8 @@ module.exports = {
     callbackURL: '/api/auth/linkedin/callback'
   },
   paypal: {
-    clientID: process.env.PAYPAL_ID || 'CLIENT_ID',
-    clientSecret: process.env.PAYPAL_SECRET || 'CLIENT_SECRET',
+    clientID: process.env.PAYPAL_ID || 'AQqiDg65Uav_g7HX1el_V6frppxIXo6EwnovLbhkfgejydrfzouio-hMwrONsMvdF_yLmdV0jMwWOKs9',
+    clientSecret: process.env.PAYPAL_SECRET || 'EN2YatEUlKG9CQnVk0BF7hPE3W2qsX0070mUdSPNmu1ZnUf0sa7zIe_0A6BVapyhOJB83EU-aTN1EeY1',
     callbackURL: '/api/auth/paypal/callback',
     sandbox: false
   },
