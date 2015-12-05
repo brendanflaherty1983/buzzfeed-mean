@@ -8,7 +8,7 @@ angular.module('quizapp').controller('QuizAppController', ['$scope', '$http', '$
       $location.path('/');
     }
   }
-]).directive('quiz', function($http, $window, quizFactory) {
+]).directive('quiz', function($http, $window, Authentication, quizFactory) {
   return {
     restrict: 'AE',
     scope: {},
@@ -36,7 +36,7 @@ angular.module('quizapp').controller('QuizAppController', ['$scope', '$http', '$
           scope.answerMode = true;
         } else {
           scope.quizOver = true;
-          scope.sendMail();
+          scope.sendMail(Authentication.user);
         }
       };
 
@@ -64,8 +64,8 @@ angular.module('quizapp').controller('QuizAppController', ['$scope', '$http', '$
 
       scope.reset();
       
-      scope.sendMail = function (Authentication) {
-        var data = ({ user: Authentication.user });
+      scope.sendMail = function (user) {
+        var data = ({ user: user });
  
         // Simple POST request example (passing data) :
         $http.post('/api/quizapp/sendemail', data)
