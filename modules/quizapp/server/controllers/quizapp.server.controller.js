@@ -36,6 +36,7 @@ exports.sendemail = function (req, res) {
       console.log(error);
     } else {
       console.log('Message sent: ' + info.response);
+      res.json(info);
     }
   });
 };
