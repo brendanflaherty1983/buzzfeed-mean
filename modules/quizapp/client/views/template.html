@@ -4,7 +4,7 @@
 		<ul id="options">
 			<li ng-repeat="option in options">
 				<label>
-					<input type="radio" name="answer" value="{{option}}" ng-model="option" ng-change="setSelected(option)">
+					<input type="radio" name="answer" value="{{option}}" ng-model="selectedOption" ng-change="setSelection(option)">
 					{{option}}
 				</label>
 			</li>
@@ -29,6 +29,5 @@
 </div>
 
 <div class="intro" ng-show="!inProgress">
-	<p>Welcome to the QuizApp</p>
 	<button id="startQuiz" ng-click="start()">Start the Quiz</button>
 </div>

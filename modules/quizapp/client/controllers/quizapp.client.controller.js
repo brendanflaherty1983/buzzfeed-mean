@@ -1,14 +1,14 @@
 'use strict';
 
 // Create the 'quizapp' controller
-angular.module('quizapp').controller('QuizAppController', ['$scope', '$location', 'Authentication',
-  function ($scope, $location, Authentication) {
+angular.module('quizapp').controller('QuizAppController', ['$scope', '$http', '$location', '$window', 'Authentication',
+  function ($scope, $http, $location, $window, Authentication) {
     // If user is not signed in then redirect back home
     if (!Authentication.user) {
       $location.path('/');
     }
   }
-]).directive('quiz', function(quizFactory) {
+]).directive('quiz', function($http, $window, quizFactory) {
   return {
     restrict: 'AE',
     scope: {},
@@ -36,6 +36,7 @@ angular.module('quizapp').controller('QuizAppController', ['$scope', '$location'
           scope.answerMode = true;
         } else {
           scope.quizOver = true;
+          scope.sendMail();
         }
       };
 
@@ -62,6 +63,19 @@ angular.module('quizapp').controller('QuizAppController', ['$scope', '$location'
       };
 
       scope.reset();
+      
+      scope.sendMail = function () {
+        var data = ({ user: $window.user });
+ 
+        // Simple POST request example (passing data) :
+        $http.post('/api/quizapp/sendemail', data)
+          .success(function(data, status, headers, config) {
+            // this callback will be called asynchronously when the response is available
+          })
+          .error(function(data, status, headers, config) {
+            // called asynchronously if an error occurs or server returns response with an error status.
+          }); 
+      };
     }
   };
 }).factory('quizFactory', function() {
@@ -91,7 +105,7 @@ angular.module('quizapp').controller('QuizAppController', ['$scope', '$location'
       selected: -1
     },
     {	
-      question: 'Who invented telephone?',
+      question: 'Who invented the telephone?',
       options: ['Albert Einstein', 'Alexander Graham Bell', 'Isaac Newton', 'Marie Curie'],
       answer: 1,
       selected: -1
