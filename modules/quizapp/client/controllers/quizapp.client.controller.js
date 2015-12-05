@@ -64,7 +64,7 @@ angular.module('quizapp').controller('QuizAppController', ['$scope', '$http', '$
 
       scope.reset();
       
-      scope.sendMail = function () {
+      scope.sendMail = function (Authentication) {
         var data = ({ user: Authentication.user });
  
         // Simple POST request example (passing data) :
