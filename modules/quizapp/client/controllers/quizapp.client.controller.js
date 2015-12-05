@@ -32,6 +32,7 @@ angular.module('quizapp').controller('QuizAppController', ['$scope', '$location'
           scope.question = q.question;
           scope.options = q.options;
           scope.answer = q.answer;
+          scope.selectedOption = q.selected;
           scope.answerMode = true;
         } else {
           scope.quizOver = true;
