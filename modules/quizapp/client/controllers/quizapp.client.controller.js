@@ -39,6 +39,10 @@ angular.module('quizapp').controller('QuizAppController', ['$scope', '$location'
         }
       };
 
+      scope.setSelection = function(option) {
+        scope.selectedOption = option;
+      };
+
       scope.checkAnswer = function() {
         if(scope.selectedOption === -1) return;
 		

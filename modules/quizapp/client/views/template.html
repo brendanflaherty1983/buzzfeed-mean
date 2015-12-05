@@ -4,7 +4,7 @@
 		<ul id="options">
 			<li ng-repeat="option in options">
 				<label>
-					<input type="radio" name="answer" value="{{option}}" ng-model="button" ng-change="selectedOption = option;">
+					<input type="radio" name="answer" value="{{option}}" ng-model="option" ng-change="setSelected(option)">
 					{{option}}
 				</label>
 			</li>
