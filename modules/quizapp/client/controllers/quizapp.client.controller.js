@@ -40,9 +40,9 @@ angular.module('quizapp').controller('QuizAppController', ['$scope', '$location'
       };
 
       scope.checkAnswer = function(question) {
-        if(question.selected === -1) return;
+        if(scope.selectedOption === -1) return;
 		
-        if(question.selected === scope.options[scope.answer]) {
+        if(scope.selectedOption === scope.options[scope.answer]) {
           scope.score++;
           scope.correctAns = true;
         } else {
